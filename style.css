@@ -15,8 +15,8 @@
   height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (107vh)[3];
-      grid-template-rows: repeat(3, 107vh);
+  -ms-grid-rows: (100vh)[3];
+      grid-template-rows: repeat(3, 100vh);
       grid-template-areas: "about" "projects" "contact";
 }
 
@@ -77,12 +77,6 @@
   -ms-grid-column: 1;
   grid-area: about;
   background-color: red;
-}
-
-#about img {
-  width: 15%;
-  border: 1px solid red;
-  border-radius: 500px;
 }
 
 #projects {
