@@ -1,18 +1,22 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css");
+
+$primary_one: #d9d9d9;
+$primary_two: #e0474c;
+$font_header: 'Roboto', sans-serif;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-.offset {
-    height: 7vh;
+    font-family: $font_header;
+    font-weight: 500;
 }
 
 header {
     width: 100vw;
     height: 7vh;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: white;
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -30,15 +34,15 @@ header {
             display: inline-block;
 
             a {
-                color: black;
+                color: $primary_two;
                 text-decoration: none;
 
                 &:hover {
-                    opacity: .5;;
+                    opacity: .5;
                 }
 
                 &:visited {
-                    color: black;
+                    color: $primary_two;
                 }
             }
         }
@@ -62,9 +66,9 @@ header {
     display: grid;
     grid-template-rows: 7vh 86vh 7vh;
     grid-template-areas: 
-    "top"
+    "."
     "content"
-    "bottom";
+    ".";
 }
 
 .content {
@@ -77,7 +81,23 @@ header {
 
 #home {
     grid-area: home;
-    background-color: #f1c40f;
+    background-color: $primary_one;
+    color: $primary_two;
+
+    h1 {
+        font-size: 4em;
+    }
+}
+
+.fa-chevron-down {
+    position: absolute;
+    bottom: 50px;
+    font-size: 400%;
+    color: $primary_two;
+
+    &:hover {
+        opacity: .8;
+    }
 }
 
 #about {
