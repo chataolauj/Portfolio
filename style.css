@@ -10,6 +10,7 @@
 }
 
 header {
+  z-index: 100;
   width: 100vw;
   height: 7vh;
   background-color: white;
@@ -97,6 +98,27 @@ header ul li a:visited {
           align-items: center;
 }
 
+.content-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px 500px 0px 500px;
+  font-size: 1.3em;
+}
+
+.content-about h1 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-bottom: 15px;
+}
+
 #home {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -124,27 +146,27 @@ header ul li a:visited {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: about;
-  background-color: red;
+  background-color: white;
 }
 
 #portfolio {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: portfolio;
-  background-color: blue;
+  background-color: #d9d9d9;
 }
 
 #skills {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: skills;
-  background-color: yellow;
+  background-color: white;
 }
 
 #contact {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: contact;
-  background-color: green;
+  background-color: #d9d9d9;
 }
 /*# sourceMappingURL=style.css.map */
