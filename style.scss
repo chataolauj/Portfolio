@@ -11,6 +11,7 @@ $font_header: 'Roboto', sans-serif;
     scroll-behavior: smooth;
     font-family: $font_header;
     font-weight: 500;
+    color: $primary_two;
 }
 
 header {
@@ -59,7 +60,6 @@ header {
     "home"
     "about"
     "portfolio"
-    "skills"
     "contact";
 }
 
@@ -77,14 +77,22 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+
+    &-home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        h1 {
+            font-size: 4em;
+        }
+    }
 
     &-about {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        padding: 0px 500px 0px 500px;
-        font-size: 1.3em;
+        padding: 0px 350px 0px 350px;
+        font-size: 2em;
 
         h1 {
             align-self: flex-start;
@@ -96,11 +104,6 @@ header {
 #home {
     grid-area: home;
     background-color: $primary_one;
-    color: $primary_two;
-
-    h1 {
-        font-size: 4em;
-    }
 }
 
 .fa-chevron-down {
@@ -124,12 +127,7 @@ header {
     background-color: $primary_one;
 }
 
-#skills {
-    grid-area: skills;
-    background-color: white;
-}
-
 #contact {
     grid-area: contact;
-    background-color: $primary_one;
+    background-color: white;
 }

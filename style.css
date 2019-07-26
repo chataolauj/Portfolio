@@ -7,6 +7,7 @@
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+  color: #e0474c;
 }
 
 header {
@@ -68,7 +69,7 @@ header ul li a:visited {
   display: grid;
   -ms-grid-rows: (100vh)[5];
       grid-template-rows: repeat(5, 100vh);
-      grid-template-areas: "home" "about" "portfolio" "skills" "contact";
+      grid-template-areas: "home" "about" "portfolio" "contact";
 }
 
 .section-layout {
@@ -93,9 +94,23 @@ header ul li a:visited {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.content-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.content-home h1 {
+  font-size: 4em;
 }
 
 .content-about {
@@ -106,11 +121,8 @@ header ul li a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0px 500px 0px 500px;
-  font-size: 1.3em;
+  padding: 0px 350px 0px 350px;
+  font-size: 2em;
 }
 
 .content-about h1 {
@@ -124,11 +136,6 @@ header ul li a:visited {
   -ms-grid-column: 1;
   grid-area: home;
   background-color: #d9d9d9;
-  color: #e0474c;
-}
-
-#home h1 {
-  font-size: 4em;
 }
 
 .fa-chevron-down {
@@ -156,17 +163,10 @@ header ul li a:visited {
   background-color: #d9d9d9;
 }
 
-#skills {
+#contact {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
-  grid-area: skills;
-  background-color: white;
-}
-
-#contact {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
   grid-area: contact;
-  background-color: #d9d9d9;
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */
