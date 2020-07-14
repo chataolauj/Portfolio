@@ -1,61 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>TOUBEE LO</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <div><a href="#home">Toubee Lo</a></div>
-      <nav>
-        <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-          </ul>
-      </nav>
+        <div><a href="#home">Toubee Lo</a></div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
     </header>
     <div id="container">
-      <div id="home" class="section-layout">
-        <div class="content">
-          <div class="content-home">
-            <h1>Hello, I'm Toubee Lo...</h1>
-            <a href="#about"><i class="fas fa-chevron-down"></i></a></button>
-          </div>
-        </div>
-      </div>
-      <div id="about">
-        <div class="section-layout">
-          <div class="content">
-            <div class="content-about">
-              <h1><u>About</u></h1>
-              <p>I graduated from the University of North Carolina at Charlotte with a B.S in Computer Science. 
-                I'm a driven and innovative individual looking to gain experience and further my skills in a 
-                demanding environment. I enjoy planning and developing scalable web and mobile applications. 
-                When I'm not working on a software project, I'm either writing the 
-                next fictional masterpiece or playing Magic: the Gathering.
-              </p>
+        <div id="home" class="section-layout">
+            <div class="content">
+                <div class="content-home">
+                    <h1>Hello, I'm Toubee Lo...</h1>
+                    <a href="#about"><i class="fas fa-chevron-down"></i></a></button>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div id="portfolio">
-        <div class="section-layout">
-          <div class="content">
-            <img src="" alt="toubee-lo">
-          </div>
+        <div id="about">
+            <div class="section-layout">
+                <div class="content">
+                    <div class="content-about">
+                        <h1><u>About</u></h1>
+                        <p>I graduated from the University of North Carolina at Charlotte with a B.S in Computer
+                            Science.
+                            I'm a driven and innovative individual looking to gain experience and further my skills in a
+                            demanding environment. I enjoy planning and developing scalable web and mobile applications.
+                            When I'm not working on a software project, I'm either writing the
+                            next fictional masterpiece or playing Magic: the Gathering.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div id="contact">
-        <div class="section-layout">
-          <div class="content">
-            <img src="" alt="toubee-lo">
-          </div>
+        <div id="portfolio">
+            <div class="section-layout">
+                <div class="content">
+                    <div class="content-portfolio">
+                        <h1>Portfolio</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div id="contact">
+            <div class="section-layout">
+                <div class="content">
+                    <div class="content-contact">
+                        <h1><u>Contact</u></h1>
+                        <form action="https://formspree.io/mleponkz" method="POST">
+                            <label for="your-name">Name:</label>
+                            <input type="text" name="name" id="your-name" placeholder="Name">
+                            <label for="your-email">Email:</label>
+                            <input type="email" name="email" id="your-email" placeholder="Email">
+                            <label for="your-message">Message:</label>
+                            <textarea name="message" id="your-message" cols="30" rows="10"
+                                placeholder="Your message..."></textarea>
+                            <input type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>

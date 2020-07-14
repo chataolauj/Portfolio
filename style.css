@@ -55,7 +55,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 header ul li a:visited {
@@ -121,14 +121,77 @@ header ul li a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0px 350px 0px 350px;
-  font-size: 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 250px;
+  font-size: 1.75em;
 }
 
 .content-about h1 {
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1665px) {
+  .content-about {
+    font-size: 2em;
+    padding: 0px 350px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .content-about {
+    font-size: 1.5em;
+    padding: 0px 150px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .content-about {
+    font-size: 1.25em;
+    padding: 0px 50px;
+  }
+}
+
+.content-portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-portfolio h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.content-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #home {
@@ -146,7 +209,7 @@ header ul li a:visited {
 }
 
 .fa-chevron-down:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 #about {
