@@ -36,13 +36,6 @@
                 <div class="content">
                     <div class="content-about">
                         <h1><u>About</u></h1>
-                        <p>I graduated from the University of North Carolina at Charlotte with a B.S in Computer
-                            Science.
-                            I'm a driven and innovative individual looking to gain experience and further my skills in a
-                            demanding environment. I enjoy planning and developing scalable web and mobile applications.
-                            When I'm not working on a software project, I'm either writing the
-                            next fictional masterpiece or playing Magic: the Gathering.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -65,13 +58,12 @@
                     <div class="content-contact">
                         <h1><u>Contact</u></h1>
                         <form action="https://formspree.io/mleponkz" method="POST">
-                            <label for="your-name">Name:</label>
-                            <input type="text" name="name" id="your-name" placeholder="Name">
-                            <label for="your-email">Email:</label>
-                            <input type="email" name="email" id="your-email" placeholder="Email">
-                            <label for="your-message">Message:</label>
-                            <textarea name="message" id="your-message" cols="30" rows="10"
-                                placeholder="Your message..."></textarea>
+                            <input type="text" name="name" id="your-name" placeholder="Name" required>
+                            <input type="email" name="email" id="your-email" placeholder="Email" required>
+                            <textarea 
+                                name="message" id="your-message" cols="30" rows="10"
+                                placeholder="Your message..." required
+                            ></textarea>
                             <input type="submit" value="Submit">
                         </form>
                     </div>

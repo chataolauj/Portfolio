@@ -89,36 +89,15 @@ header {
 	}
 
 	&-about {
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 0px 250px;
-		font-size: 1.75em;
+		padding: 0px 50px;
 
 		h1 {
 			font-size: 2em !important;
-			margin-bottom: 15px;
-		}
-	}
-
-	@media screen and (min-width: 1665px) {
-		&-about {
-			font-size: 2em;
-			padding: 0px 350px;
-		}
-	}
-
-	@media screen and (max-width: 1025px) {
-		&-about {
-			font-size: 1.5em;
-			padding: 0px 150px;
-		}
-	}
-
-	@media screen and (max-width: 675px) {
-		&-about {
-			font-size: 1.25em;
-			padding: 0px 50px;
+			margin: 25px 0px;
 		}
 	}
 
@@ -162,29 +141,36 @@ header {
 	}
 
 	&-contact {
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 
+		h1 {
+			margin: 25px 0px;
+		}
+
 		form {
+			height: 100%;
+			width: 35%;
 			display: flex;
 			flex-direction: column;
-			width: 500px;
+			justify-content: center;
 
 			input[type="text"] {
 				margin-bottom: 15px;
-				padding: 5px 5px;
+				padding: 10px;
 				font-size: 1.25em;
 			}
 
 			input[type="email"] {
 				margin-bottom: 15px;
-				padding: 5px 5px;
+				padding: 10px;
 				font-size: 1.25em;
 			}
 
 			textarea {
-				padding: 5px 5px 0px 5px;
+				padding: 10px;
 				margin-bottom: 15px;
 				font-size: 1.25em;
 				resize: none;
@@ -193,6 +179,42 @@ header {
 			input[type="submit"] {
 				padding: 10px 5px;
 				font-size: 1.25em;
+			}
+		}
+	}
+
+	//Responsive
+
+	@media screen and (min-width: 1665px) {
+		&-about {
+			padding: 0px 350px;
+		}
+	}
+
+	@media screen and (max-width: 1025px) {
+		&-about {
+			padding: 0px 150px;
+		}
+
+		&-contact {
+			form {
+				width: 50%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 675px) {
+		&-about {
+			padding: 0px 50px;
+		}
+
+		&-contact {
+			form {
+				width: 75%;
+
+				input[type="email"] {
+					margin-bottom: 16px;
+				}
 			}
 		}
 	}

@@ -28,10 +28,7 @@ async function main() {
 
 		project_div.appendChild(img);
 
-		project_div.addEventListener("mouseover", (event) => {
-			event.target.appendChild(title);
-			event.target.appendChild(view_more);
-		});
+		project_div.addEventListener("mouseover", (event) => {});
 
 		outer_div.appendChild(project_div);
 	}
