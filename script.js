@@ -26,7 +26,7 @@ function createProjectModal(project, img, view_more) {
 	description.innerHTML = project.description;
 
 	close.classList.add("close");
-	close.innerHTML = "CLOSE";
+	close.innerHTML = "&times";
 	close.addEventListener("click", () => {
 		body.removeChild(overlay);
 	});
@@ -37,10 +37,10 @@ function createProjectModal(project, img, view_more) {
 
 	/* Project Modal */
 	project_modal.classList.add("project-modal");
+	project_modal.appendChild(close);
 	project_modal.appendChild(img.cloneNode(true));
 	project_modal.appendChild(title);
 	project_modal.appendChild(description);
-	project_modal.appendChild(close);
 
 	/* Closes modal */
 	window.addEventListener("click", (event) => {

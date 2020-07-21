@@ -233,40 +233,6 @@ header {
 	}
 
 	//Responsive
-
-	@media screen and (min-width: 1665px) {
-		&-about {
-			padding: 0px 350px;
-		}
-	}
-
-	@media screen and (max-width: 1025px) {
-		&-about {
-			padding: 0px 150px;
-		}
-
-		&-contact {
-			form {
-				width: 50%;
-			}
-		}
-	}
-
-	@media screen and (max-width: 675px) {
-		&-about {
-			padding: 0px 50px;
-		}
-
-		&-contact {
-			form {
-				width: 75%;
-
-				input[type="email"] {
-					margin-bottom: 16px;
-				}
-			}
-		}
-	}
 }
 
 .overlay {
@@ -284,9 +250,10 @@ header {
 	background-color: rgba(0, 0, 0, 0.25);
 
 	.project-modal {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		width: 70%;
+		width: 50%;
 		padding: 10px;
 		background-color: #fefefe;
 		border-radius: 5px;
@@ -294,7 +261,6 @@ header {
 		img {
 			max-width: 100%;
 			margin-bottom: 25px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		}
 
 		h2 {
@@ -302,21 +268,61 @@ header {
 		}
 
 		.close {
-			align-self: flex-end;
-			width: 10%;
-			padding: 5px;
-			color: #ff5252;
-			background-color: white;
-			border: none;
-			outline: none;
-			font-size: 1.25em;
+			position: absolute;
+			top: -15px;
+			right: -10px;
+			padding: 2px 10px;
+			color: white;
+			font-size: 1.5em;
 			font-weight: bold;
+			background-color: rgba(0, 0, 0, 1);
+			border: none;
+			border-radius: 25px;
+			outline: none;
+			box-shadow: 5px 5px 8px #888;
 
 			&:hover {
 				cursor: pointer;
-				background-color: rgba(255, 0, 0, 0.2);
-				border-radius: 5px;
-				transition: 0.25s ease;
+			}
+
+			&:active {
+				top: -13px;
+				right: -12px;
+				box-shadow: 0px 0px 0px #888;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1665px) {
+	.content-about {
+		padding: 0px 350px;
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	.content-about {
+		padding: 0px 150px;
+	}
+
+	.content-contact {
+		form {
+			width: 50%;
+		}
+	}
+}
+
+@media screen and (max-width: 675px) {
+	.content-about {
+		padding: 0px 50px;
+	}
+
+	.content-contact {
+		form {
+			width: 75%;
+
+			input[type="email"] {
+				margin-bottom: 16px;
 			}
 		}
 	}

@@ -308,33 +308,6 @@ header ul li a:visited {
   font-size: 1.25em;
 }
 
-@media screen and (min-width: 1665px) {
-  .content-about {
-    padding: 0px 350px;
-  }
-}
-
-@media screen and (max-width: 1025px) {
-  .content-about {
-    padding: 0px 150px;
-  }
-  .content-contact form {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 675px) {
-  .content-about {
-    padding: 0px 50px;
-  }
-  .content-contact form {
-    width: 75%;
-  }
-  .content-contact form input[type="email"] {
-    margin-bottom: 16px;
-  }
-}
-
 .overlay {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -360,6 +333,7 @@ header ul li a:visited {
 }
 
 .overlay .project-modal {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,7 +341,7 @@ header ul li a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 70%;
+  width: 50%;
   padding: 10px;
   background-color: #fefefe;
   border-radius: 5px;
@@ -376,8 +350,6 @@ header ul li a:visited {
 .overlay .project-modal img {
   max-width: 100%;
   margin-bottom: 25px;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .overlay .project-modal h2 {
@@ -385,24 +357,57 @@ header ul li a:visited {
 }
 
 .overlay .project-modal .close {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  width: 10%;
-  padding: 5px;
-  color: #ff5252;
-  background-color: white;
-  border: none;
-  outline: none;
-  font-size: 1.25em;
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  padding: 2px 10px;
+  color: white;
+  font-size: 1.5em;
   font-weight: bold;
+  background-color: black;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  -webkit-box-shadow: 5px 5px 8px #888;
+          box-shadow: 5px 5px 8px #888;
 }
 
 .overlay .project-modal .close:hover {
   cursor: pointer;
-  background-color: rgba(255, 0, 0, 0.2);
-  border-radius: 5px;
-  -webkit-transition: 0.25s ease;
-  transition: 0.25s ease;
+}
+
+.overlay .project-modal .close:active {
+  top: -13px;
+  right: -12px;
+  -webkit-box-shadow: 0px 0px 0px #888;
+          box-shadow: 0px 0px 0px #888;
+}
+
+@media screen and (min-width: 1665px) {
+  .content-about {
+    padding: 0px 350px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .content-about {
+    padding: 0px 150px;
+  }
+  .content-contact form {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .content-about {
+    padding: 0px 50px;
+  }
+  .content-contact form {
+    width: 75%;
+  }
+  .content-contact form input[type="email"] {
+    margin-bottom: 16px;
+  }
 }
 
 #home {
