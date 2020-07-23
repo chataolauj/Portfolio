@@ -352,8 +352,59 @@ header ul li a:visited {
   margin-bottom: 25px;
 }
 
-.overlay .project-modal h2 {
+.overlay .project-modal .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 10px;
+}
+
+.overlay .project-modal .title h2 {
+  display: inline-block;
+}
+
+.overlay .project-modal .title-link {
+  margin-left: 5px;
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 50px;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+}
+
+.overlay .project-modal .title-link-demo {
+  color: #2c82c9;
+  background-color: rgba(44, 130, 201, 0.1);
+}
+
+.overlay .project-modal .title-link-demo:hover {
+  cursor: pointer;
+  background-color: rgba(44, 130, 201, 0.25);
+}
+
+.overlay .project-modal .title-link-demo:active {
+  background-color: rgba(44, 130, 201, 0.5);
+}
+
+.overlay .project-modal .title-link-github {
+  color: #8c14fc;
+  background-color: rgba(140, 20, 252, 0.1);
+}
+
+.overlay .project-modal .title-link-github:hover {
+  cursor: pointer;
+  background-color: rgba(140, 20, 252, 0.25);
+}
+
+.overlay .project-modal .title-link-github:active {
+  background-color: rgba(140, 20, 252, 0.5);
 }
 
 .overlay .project-modal .close {
