@@ -12,15 +12,16 @@ async function getProjects() {
 
 function createProjectModal(project, img, view_more) {
 	let body = document.querySelector("body");
+	let close = document.createElement("button");
 	let title_div = document.createElement("div");
 	let title = document.createElement("h2");
-	let demo_button = document.createElement("span");
-	let github_button = document.createElement("span");
+	let demo_button = document.createElement("button");
+	let github_button = document.createElement("button");
 	let link = document.createElement("a");
 	let description = document.createElement("p");
 	let overlay = document.createElement("div");
 	let project_modal = document.createElement("div");
-	let close = document.createElement("button");
+	let tags = document.createElement("div");
 
 	view_more.addEventListener("click", () => {
 		body.appendChild(overlay);
@@ -60,6 +61,15 @@ function createProjectModal(project, img, view_more) {
 
 	description.innerHTML = project.description;
 
+	tags.classList.add("tech-stack");
+
+	for (let tech of project.tech) {
+		let tag = document.createElement("p");
+
+		tag.innerHTML = tech;
+		tags.appendChild(tag);
+	}
+
 	/* Overlay */
 	overlay.classList.add("overlay");
 	overlay.appendChild(project_modal);
@@ -70,6 +80,7 @@ function createProjectModal(project, img, view_more) {
 	project_modal.appendChild(img.cloneNode(true));
 	project_modal.appendChild(title_div);
 	project_modal.appendChild(description);
+	project_modal.appendChild(tags);
 
 	/* Closes modal */
 	window.addEventListener("click", (event) => {
@@ -91,7 +102,7 @@ async function main() {
 		let hover_div = document.createElement("div");
 
 		img.src = project.img;
-		img.alt = project.name;
+		img.alt = project.name + " image.";
 		title.innerHTML = project.name;
 		view_more.innerHTML = "View Details";
 

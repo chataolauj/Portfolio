@@ -5,8 +5,15 @@
 		"url": "https://local-events-chataolauj.herokuapp.com/",
 		"github": "https://github.com/chataolauj/local-events",
 		"img": "./images/local-events.jpg",
-		"tech": ["HTML5", "CSS3/SCSS", "Javascript", "Vue.js"],
-		"miscellaneous": ["Git", "Postman", "Eventful API", "Google Maps API"]
+		"tech": [
+			"HTML",
+			"CSS/SCSS",
+			"Javascript",
+			"Vue.js",
+			"Eventful API",
+			"Google Maps API"
+		],
+		"miscellaneous": ["Git", "Postman"]
 	},
 	{
 		"description": "MTG Price Scraper scrapes the internet for prices of Magic: the Gathering trading cards once a user selects an item from the search results. Users can also add cards to their wish list to get updates on prices via email. Prices for cards on wish lists are udpated daily in 4 hour increments, which is ran by a script on a local server. The script scrapes the internet for prices, updates the prices to the cloud (MongoDB Atlas), and sends out email notifications if there are prices that are less than or equal to the users wish price for each card.",
@@ -15,8 +22,8 @@
 		"github": "https://github.com/chataolauj/mtg-price-scraper",
 		"img": "./images/mtg-price-scraper.jpg",
 		"tech": [
-			"HTML5",
-			"CSS3/SCSS",
+			"HTML",
+			"CSS/SCSS",
 			"Javascript",
 			"Vue.js",
 			"MongoDB",
