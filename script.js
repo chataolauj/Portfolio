@@ -10,8 +10,7 @@ async function getProjects() {
 	return projects;
 }
 
-function createProjectModal(project, img, view_more) {
-	let body = document.querySelector("body");
+function setProjectModal(overlay, project_modal, project, img) {
 	let close = document.createElement("button");
 	let title_div = document.createElement("div");
 	let title = document.createElement("h2");
@@ -19,24 +18,17 @@ function createProjectModal(project, img, view_more) {
 	let github_button = document.createElement("button");
 	let link = document.createElement("a");
 	let description = document.createElement("p");
-	let overlay = document.createElement("div");
-	let project_modal = document.createElement("div");
 	let tags = document.createElement("div");
-
-	view_more.addEventListener("click", () => {
-		body.appendChild(overlay);
-	});
 
 	close.classList.add("close");
 	close.innerHTML = "&times";
 	close.addEventListener("click", () => {
-		body.removeChild(overlay);
-	});
+		overlay.classList.remove("overlay-fade-in");
+		project_modal.classList.remove("project-modal-fade-in");
 
-	title_div.appendChild(title);
-	title_div.appendChild(demo_button);
-	title_div.appendChild(github_button);
-	title_div.classList.add("title");
+		overlay.classList.add("overlay-fade-out");
+		project_modal.classList.add("project-modal-fade-out");
+	});
 
 	title.innerHTML = project.name;
 
@@ -70,28 +62,35 @@ function createProjectModal(project, img, view_more) {
 		tags.appendChild(tag);
 	}
 
-	/* Overlay */
-	overlay.classList.add("overlay");
-	overlay.appendChild(project_modal);
-
 	/* Project Modal */
-	project_modal.classList.add("project-modal");
 	project_modal.appendChild(close);
 	project_modal.appendChild(img.cloneNode(true));
 	project_modal.appendChild(title_div);
 	project_modal.appendChild(description);
 	project_modal.appendChild(tags);
 
+	/* Project Modal Title Section */
+	title_div.classList.add("title");
+	title_div.appendChild(title);
+	title_div.appendChild(demo_button);
+	title_div.appendChild(github_button);
+
 	/* Closes modal */
 	window.addEventListener("click", (event) => {
 		if (event.target == overlay) {
-			body.removeChild(overlay);
+			overlay.classList.remove("overlay-fade-in");
+			project_modal.classList.remove("project-modal-fade-in");
+
+			overlay.classList.add("overlay-fade-out");
+			project_modal.classList.add("project-modal-fade-out");
 		}
 	});
 }
 
 async function main() {
 	let outer_div = document.querySelector("#projects");
+	let overlay = document.querySelector(".overlay");
+	let project_modal = document.querySelector(".project-modal");
 	let projects = await getProjects();
 
 	for (let project of projects) {
@@ -105,6 +104,23 @@ async function main() {
 		img.alt = project.name + " image.";
 		title.innerHTML = project.name;
 		view_more.innerHTML = "View Details";
+		view_more.addEventListener("click", () => {
+			overlay.classList.remove("overlay-fade-out");
+			project_modal.classList.remove("project-modal-fade-out");
+
+			overlay.classList.add("overlay-fade-in");
+			project_modal.classList.add("project-modal-fade-in");
+
+			if (!project_modal.children.length) {
+				setProjectModal(overlay, project_modal, project, img);
+			} else {
+				while (project_modal.firstChild) {
+					project_modal.firstChild.remove();
+				}
+
+				setProjectModal(overlay, project_modal, project, img);
+			}
+		});
 
 		outer_div.appendChild(project_div);
 
@@ -117,8 +133,6 @@ async function main() {
 		hover_div.appendChild(view_more);
 
 		view_more.classList.add("card-hover-details-button");
-
-		createProjectModal(project, img, view_more);
 	}
 }
 
