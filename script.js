@@ -92,6 +92,26 @@ async function main() {
 	let overlay = document.querySelector(".overlay");
 	let project_modal = document.querySelector(".project-modal");
 	let projects = await getProjects();
+	let menu_button = document.querySelector(".menu-button");
+	let burger = document.querySelector(".burger");
+	let nav = document.querySelector("nav");
+	let links = document.querySelectorAll(".link");
+
+	menu_button.addEventListener("click", () => {
+		menu_button.classList.toggle("open");
+		burger.classList.toggle("change-color");
+
+		nav.classList.toggle("show");
+	});
+
+	links.forEach((link) => {
+		link.addEventListener("click", () => {
+			menu_button.classList.toggle("open");
+			burger.classList.toggle("change-color");
+
+			nav.classList.toggle("show");
+		});
+	});
 
 	for (let project of projects) {
 		let project_div = document.createElement("div");

@@ -27,7 +27,6 @@ header {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  color: #e0474c;
 }
 
 header ul {
@@ -45,21 +44,92 @@ header ul {
   list-style: none;
 }
 
-header ul li {
+header ul .link {
   display: inline-block;
 }
 
-header ul li a {
+header ul .link a {
   color: #e0474c;
   text-decoration: none;
 }
 
-header ul li a:hover {
+header ul .link a:hover {
   opacity: 0.5;
 }
 
-header ul li a:visited {
+header ul .link a:visited {
   color: #e0474c;
+}
+
+header .menu-button {
+  width: 45px;
+  height: 45px;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header .menu-button.open .burger {
+  -webkit-transform: translateX(-45px);
+          transform: translateX(-45px);
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header .menu-button.open .burger:before {
+  -webkit-transform: rotate(45deg) translate(30px, -30px);
+          transform: rotate(45deg) translate(30px, -30px);
+}
+
+header .menu-button.open .burger:after {
+  -webkit-transform: rotate(-45deg) translate(30px, 30px);
+          transform: rotate(-45deg) translate(30px, 30px);
+}
+
+header .menu-button .burger {
+  z-index: 2;
+  width: 30px;
+  height: 5px;
+  background-color: #e0474c;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header .menu-button .burger:before, header .menu-button .burger:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background-color: #e0474c;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header .menu-button .burger:before {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+header .menu-button .burger:after {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+header .menu-button:hover {
+  cursor: pointer;
+}
+
+header .menu-button:active {
+  -webkit-tap-highlight-color: transparent;
 }
 
 #container {
@@ -117,6 +187,7 @@ header ul li a:visited {
 .content-home h1 {
   margin-top: auto;
   font-size: 4em;
+  text-align: center;
 }
 
 .content-home a {
@@ -364,7 +435,7 @@ header ul li a:visited {
 }
 
 .overlay .project-modal {
-  position: relative;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -524,6 +595,57 @@ header ul li a:visited {
 
 /* Small Screens */
 @media screen and (max-width: 675px) {
+  header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0px 10px;
+  }
+  header nav {
+    position: relative;
+    opacity: 0;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    pointer-events: none;
+  }
+  header nav ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: #e0474c;
+  }
+  header nav ul .link {
+    font-size: 3em;
+  }
+  header nav ul .link a {
+    color: #d9d9d9;
+  }
+  header nav ul .link a:visited {
+    color: #d9d9d9;
+  }
+  header nav.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+  header .menu-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .menu-button .burger.change-color:before, header .menu-button .burger.change-color:after {
+    background-color: #d9d9d9;
+  }
   .content-about {
     padding: 0px 50px;
   }
@@ -534,7 +656,7 @@ header ul li a:visited {
     margin-bottom: 16px;
   }
   .overlay .project-modal {
-    width: 75%;
+    width: 90%;
   }
 }
 
