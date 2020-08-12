@@ -13,7 +13,7 @@ header {
   z-index: 2;
   width: 100vw;
   height: 7vh;
-  background-color: white;
+  background-color: #364f6b;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,8 +29,12 @@ header {
       justify-content: space-around;
 }
 
-header ul {
-  width: 35vw;
+header nav {
+  width: 50vw;
+}
+
+header nav ul {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,23 +46,20 @@ header ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   list-style: none;
+  font-size: 1.25em;
 }
 
-header ul .link {
+header nav ul .link {
   display: inline-block;
 }
 
-header ul .link a {
-  color: #e0474c;
+header nav ul .link a {
+  color: #f0f0f0;
   text-decoration: none;
 }
 
-header ul .link a:hover {
+header nav ul .link a:hover {
   opacity: 0.5;
-}
-
-header ul .link a:visited {
-  color: #e0474c;
 }
 
 header .menu-button {
@@ -97,7 +98,7 @@ header .menu-button .burger {
   z-index: 2;
   width: 30px;
   height: 5px;
-  background-color: #e0474c;
+  background-color: #f0f0f0;
   border-radius: 5px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -108,7 +109,7 @@ header .menu-button .burger:before, header .menu-button .burger:after {
   position: absolute;
   width: 30px;
   height: 5px;
-  background-color: #e0474c;
+  background-color: #f0f0f0;
   border-radius: 5px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -166,10 +167,6 @@ header .menu-button:active {
           justify-content: center;
 }
 
-.content h1 {
-  color: #e0474c;
-}
-
 .content-home {
   height: 100%;
   display: -webkit-box;
@@ -182,6 +179,7 @@ header .menu-button:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #f0f0f0;
 }
 
 .content-home h1 {
@@ -190,14 +188,20 @@ header .menu-button:active {
   text-align: center;
 }
 
-.content-home a {
-  margin-top: auto;
+.content-home .profiles {
+  margin-top: 10px;
+  font-size: 3em;
+}
+
+.content-home .profiles a {
+  color: #f0f0f0;
 }
 
 .content-home .fa-chevron-down {
+  margin-top: auto;
   bottom: 50px;
   font-size: 4em;
-  color: #e0474c;
+  color: #f0f0f0;
 }
 
 .content-home .fa-chevron-down:hover {
@@ -240,8 +244,9 @@ header .menu-button:active {
 }
 
 .content-portfolio h1 {
-  margin: 25px 0px;
+  margin-top: 25px;
   font-size: 2em;
+  color: #f0f0f0;
 }
 
 .content-portfolio #projects {
@@ -291,7 +296,7 @@ header .menu-button:active {
   opacity: 0;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-  background-color: #e0474c;
+  background-color: #f0f0f0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,23 +314,23 @@ header .menu-button:active {
 
 .content-portfolio .card-hover-details h1 {
   font-size: 2em;
-  color: white;
+  color: #364f6b;
   margin-bottom: 25px;
 }
 
 .content-portfolio .card-hover-details-button {
   font-size: 1.25em;
   padding: 5px;
-  border: 2px solid white;
-  background-color: #e0474c;
-  color: white;
+  border: 2px solid #364f6b;
+  background-color: #f0f0f0;
+  color: #364f6b;
   outline: none;
 }
 
 .content-portfolio .card-hover-details-button:hover {
   cursor: pointer;
-  color: #e0474c;
-  background-color: white;
+  color: #f0f0f0;
+  background-color: #364f6b;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
@@ -349,7 +354,8 @@ header .menu-button:active {
 }
 
 .content-contact h1 {
-  margin: 25px 0px;
+  margin-top: 25px;
+  color: #f0f0f0;
 }
 
 .content-contact form {
@@ -367,32 +373,87 @@ header .menu-button:active {
           justify-content: center;
 }
 
-.content-contact form input[type="text"] {
-  margin-bottom: 15px;
-  padding: 10px;
-  font-size: 1.25em;
-}
-
-.content-contact form input[type="email"] {
-  margin-bottom: 15px;
-  padding: 10px;
-  font-size: 1.25em;
-}
-
 .content-contact form textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  font-size: 1.25em;
   resize: none;
 }
 
-.content-contact form input[type="submit"] {
-  padding: 10px 5px;
+.content-contact form input[type="text"],
+.content-contact form input[type="email"],
+.content-contact form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
   font-size: 1.25em;
+  color: #f0f0f0;
+  background-color: #364f6b;
+  border: none;
+}
+
+.content-contact form input[type="text"]::-webkit-input-placeholder,
+.content-contact form input[type="email"]::-webkit-input-placeholder,
+.content-contact form textarea::-webkit-input-placeholder {
+  color: #f0f0f0;
+}
+
+.content-contact form input[type="text"]:-ms-input-placeholder,
+.content-contact form input[type="email"]:-ms-input-placeholder,
+.content-contact form textarea:-ms-input-placeholder {
+  color: #f0f0f0;
+}
+
+.content-contact form input[type="text"]::-ms-input-placeholder,
+.content-contact form input[type="email"]::-ms-input-placeholder,
+.content-contact form textarea::-ms-input-placeholder {
+  color: #f0f0f0;
+}
+
+.content-contact form input[type="text"]::placeholder,
+.content-contact form input[type="email"]::placeholder,
+.content-contact form textarea::placeholder {
+  color: #f0f0f0;
+}
+
+.content-contact form input[type="text"]:focus,
+.content-contact form input[type="email"]:focus,
+.content-contact form textarea:focus {
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.content-contact form input[type="submit"] {
+  padding: 15px 5px;
+  font-size: 1.25em;
+  border: none;
 }
 
 .content-contact form input[type="submit"]:hover {
   cursor: pointer;
+}
+
+.content-contact form input[type="submit"]:active, .content-contact form input[type="submit"]:focus {
+  outline: none;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heading .header-underline {
+  width: 50%;
+  height: 5px;
+  margin-top: 15px;
+  background-color: #f0f0f0;
 }
 
 .overlay {
@@ -475,8 +536,8 @@ header .menu-button:active {
   border: none;
   border-radius: 25px;
   outline: none;
-  -webkit-box-shadow: 5px 5px 8px #888;
-          box-shadow: 5px 5px 8px #888;
+  -webkit-box-shadow: 2px 3px 5px #888;
+          box-shadow: 2px 3px 5px #888;
 }
 
 .overlay .project-modal .close:hover {
@@ -571,8 +632,8 @@ header .menu-button:active {
   display: inline-block;
   padding: 5px;
   margin: 5px 5px 0px 0px;
-  color: white;
-  background-color: #e0474c;
+  color: #f0f0f0;
+  background-color: #364f6b;
   border-radius: 5px;
 }
 
@@ -623,16 +684,16 @@ header .menu-button:active {
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    background-color: #e0474c;
+    background-color: #f0f0f0;
   }
   header nav ul .link {
     font-size: 3em;
   }
   header nav ul .link a {
-    color: #d9d9d9;
+    color: #364f6b;
   }
   header nav ul .link a:visited {
-    color: #d9d9d9;
+    color: #364f6b;
   }
   header nav.show {
     opacity: 1;
@@ -644,7 +705,7 @@ header .menu-button:active {
     display: flex;
   }
   header .menu-button .burger.change-color:before, header .menu-button .burger.change-color:after {
-    background-color: #d9d9d9;
+    background-color: #364f6b;
   }
   .content-about {
     padding: 0px 50px;
@@ -752,7 +813,7 @@ header .menu-button:active {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: home;
-  background-color: #d9d9d9;
+  background-color: #364f6b;
 }
 
 /* #about {
@@ -763,13 +824,13 @@ header .menu-button:active {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: portfolio;
-  background-color: white;
+  background-color: rgba(54, 79, 107, 0.8);
 }
 
 #contact {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: contact;
-  background-color: #d9d9d9;
+  background-color: rgba(54, 79, 107, 0.6);
 }
 /*# sourceMappingURL=style.css.map */
