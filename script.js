@@ -89,9 +89,16 @@ function setProjectModal(overlay, project_modal, project, img) {
 
 function submitContactForm() {
 	let form = document.querySelector("form");
+	let name = document.querySelector("#your-name");
+	let email = document.querySelector("#your-email");
+	let message = document.querySelector("#your-message");
 
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
+
+		name.value = "";
+		email.value = "";
+		message.value = "";
 
 		const data = new FormData(form);
 
