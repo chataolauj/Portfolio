@@ -159,6 +159,10 @@ header {
 
 			a {
 				color: $primary_two;
+
+				&:hover {
+					color: rgba(240, 240, 240, 0.8);
+				}
 			}
 		}
 
@@ -305,17 +309,20 @@ header {
 				&:focus {
 					box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
 					outline: none;
-					transition: 0.2s ease-in-out;
+					transition: 0.1s ease-in-out;
 				}
 			}
 
 			input[type="submit"] {
 				padding: 15px 5px;
 				font-size: 1.25em;
+				color: $primary_one;
+				background-color: $primary_two;
 				border: none;
 
 				&:hover {
 					cursor: pointer;
+					background-color: rgba(240, 240, 240, 0.8);
 				}
 
 				&:active,
@@ -398,7 +405,7 @@ header {
 			border: none;
 			border-radius: 25px;
 			outline: none;
-			box-shadow: 2px 3px 5px #888;
+			box-shadow: 1px 2px 5px #888;
 
 			&:hover {
 				cursor: pointer;
@@ -562,6 +569,12 @@ header {
 		}
 	}
 
+	.content-home {
+		h1 {
+			font-size: 3em;
+		}
+	}
+
 	.content-about {
 		padding: 0px 50px;
 	}
@@ -573,6 +586,12 @@ header {
 			input[type="email"] {
 				margin-bottom: 16px;
 			}
+		}
+	}
+
+	.heading {
+		.header-underline {
+			width: 40%;
 		}
 	}
 

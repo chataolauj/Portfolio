@@ -87,6 +87,34 @@ function setProjectModal(overlay, project_modal, project, img) {
 	});
 }
 
+function submitContactForm() {
+	let form = document.querySelector("form");
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+
+		const data = new FormData(form);
+
+		fetch(form.getAttribute("action"), {
+			method: "POST",
+			headers: {
+				Accept: "application/x-www-form-urlencoded;charset=UTF-8",
+				"Content-Type":
+					"application/x-www-form-urlencoded;charset=UTF-8",
+			},
+			body: new URLSearchParams(data).toString(),
+		});
+	})
+		.then((res) => {
+			if (res) {
+				alert("Your message was successfully sent to Toubee Lo!");
+			}
+		})
+		.catch(() => {
+			alert("Something went wrong. Please try again later.");
+		});
+}
+
 async function main() {
 	let outer_div = document.querySelector("#projects");
 	let overlay = document.querySelector(".overlay");
@@ -154,6 +182,8 @@ async function main() {
 
 		view_more.classList.add("card-hover-details-button");
 	}
+
+	submitContactForm();
 }
 
 main();

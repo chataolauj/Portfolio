@@ -1,6 +1,6 @@
 [
 	{
-		"description": "A personal project that I developed in the front-end framework Vue.js. Local Events provide a way for users to search for events happening within, or near, a location or zipcode. The results are displayed in a list and on a Google Map with markers indicating where the events are located. Clicking on a marker will display the description of the event. Also, clicking on an item from the list will show where that specific event is located on the map.",
+		"description": "A personal project that I developed in the front-end framework Vue.js. Local Events provides a way for users to search for events happening within, or near, a location or zipcode. The results are displayed in a list and on a Google Map with markers indicating where the events are located. Clicking on a marker will display the description of the event. Also, clicking on an item from the list will show where that specific event is located on the map.",
 		"name": "Local Events",
 		"url": "https://local-events-chataolauj.herokuapp.com/",
 		"github": "https://github.com/chataolauj/local-events",

@@ -197,6 +197,10 @@ header .menu-button:active {
   color: #f0f0f0;
 }
 
+.content-home .profiles a:hover {
+  color: rgba(240, 240, 240, 0.8);
+}
+
 .content-home .fa-chevron-down {
   margin-top: auto;
   bottom: 50px;
@@ -418,18 +422,21 @@ header .menu-button:active {
   -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
   outline: none;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .content-contact form input[type="submit"] {
   padding: 15px 5px;
   font-size: 1.25em;
+  color: #364f6b;
+  background-color: #f0f0f0;
   border: none;
 }
 
 .content-contact form input[type="submit"]:hover {
   cursor: pointer;
+  background-color: rgba(240, 240, 240, 0.8);
 }
 
 .content-contact form input[type="submit"]:active, .content-contact form input[type="submit"]:focus {
@@ -536,8 +543,8 @@ header .menu-button:active {
   border: none;
   border-radius: 25px;
   outline: none;
-  -webkit-box-shadow: 2px 3px 5px #888;
-          box-shadow: 2px 3px 5px #888;
+  -webkit-box-shadow: 1px 2px 5px #888;
+          box-shadow: 1px 2px 5px #888;
 }
 
 .overlay .project-modal .close:hover {
@@ -707,6 +714,9 @@ header .menu-button:active {
   header .menu-button .burger.change-color:before, header .menu-button .burger.change-color:after {
     background-color: #364f6b;
   }
+  .content-home h1 {
+    font-size: 3em;
+  }
   .content-about {
     padding: 0px 50px;
   }
@@ -715,6 +725,9 @@ header .menu-button:active {
   }
   .content-contact form input[type="email"] {
     margin-bottom: 16px;
+  }
+  .heading .header-underline {
+    width: 40%;
   }
   .overlay .project-modal {
     width: 90%;
