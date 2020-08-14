@@ -103,16 +103,16 @@ function submitContactForm() {
 					"application/x-www-form-urlencoded;charset=UTF-8",
 			},
 			body: new URLSearchParams(data).toString(),
-		});
-	})
-		.then((res) => {
-			if (res) {
-				alert("Your message was successfully sent to Toubee Lo!");
-			}
 		})
-		.catch(() => {
-			alert("Something went wrong. Please try again later.");
-		});
+			.then((res) => {
+				if (res) {
+					alert("Your message was successfully sent to Toubee Lo!");
+				}
+			})
+			.catch(() => {
+				alert("Something went wrong. Please try again later.");
+			});
+	});
 }
 
 async function main() {
