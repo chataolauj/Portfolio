@@ -96,10 +96,6 @@ function submitContactForm() {
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
 
-		name.value = "";
-		email.value = "";
-		message.value = "";
-
 		const data = new FormData(form);
 
 		fetch(form.getAttribute("action"), {
@@ -112,11 +108,19 @@ function submitContactForm() {
 			body: new URLSearchParams(data).toString(),
 		})
 			.then((res) => {
+				name.value = "";
+				email.value = "";
+				message.value = "";
+
 				if (res) {
 					alert("Your message was successfully sent to Toubee Lo!");
 				}
 			})
 			.catch(() => {
+				name.value = "";
+				email.value = "";
+				message.value = "";
+
 				alert("Something went wrong. Please try again later.");
 			});
 	});
