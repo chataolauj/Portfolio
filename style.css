@@ -138,8 +138,8 @@ header .menu-button:active {
   height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (100%)[3];
-      grid-template-rows: repeat(3, 100%);
+  -ms-grid-rows: (100vh)[3];
+      grid-template-rows: repeat(3, 100vh);
       grid-template-areas: "home" "portfolio" "contact";
 }
 
@@ -715,7 +715,7 @@ header .menu-button:active {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -776,8 +776,8 @@ header .menu-button:active {
         grid-template-columns: auto auto;
     -webkit-column-gap: 25px;
             column-gap: 25px;
-    width: 85%;
-    height: 85%;
+    width: 85vw;
+    height: 85vh;
   }
   .overlay .project-modal img {
     height: 100%;
