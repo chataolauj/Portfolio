@@ -146,6 +146,7 @@ header .menu-button:active {
 .section-layout {
   display: -ms-grid;
   display: grid;
+  height: auto;
   -ms-grid-rows: 7vh 86vh 7vh;
       grid-template-rows: 7vh 86vh 7vh;
       grid-template-areas: "." "content" ".";
@@ -259,9 +260,9 @@ header .menu-button:active {
   display: grid;
   -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  -webkit-column-gap: 5%;
-          column-gap: 5%;
-  row-gap: 5%;
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
+  row-gap: 15px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -463,6 +464,29 @@ header .menu-button:active {
   background-color: #f0f0f0;
 }
 
+#home {
+  grid-area: "home";
+  background-color: #364f6b;
+}
+
+/* #about {
+	grid-area: about;
+	background-color: white;
+} */
+#portfolio {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: portfolio;
+  background-color: rgba(54, 79, 107, 0.8);
+}
+
+#contact {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: contact;
+  background-color: rgba(54, 79, 107, 0.6);
+}
+
 .overlay {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -560,10 +584,20 @@ header .menu-button:active {
 
 .overlay .project-modal img {
   max-width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
-.overlay .project-modal .title {
+.overlay .project-modal .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.overlay .project-modal .details .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -577,11 +611,11 @@ header .menu-button:active {
   margin-bottom: 10px;
 }
 
-.overlay .project-modal .title h2 {
+.overlay .project-modal .details .title h2 {
   display: inline-block;
 }
 
-.overlay .project-modal .title-link {
+.overlay .project-modal .details .title-link {
   margin-left: 5px;
   padding: 8px;
   font-size: 1em;
@@ -590,39 +624,39 @@ header .menu-button:active {
   outline: none;
 }
 
-.overlay .project-modal .title-link-demo {
+.overlay .project-modal .details .title-link-demo {
   color: #2c82c9;
   background-color: rgba(44, 130, 201, 0.1);
 }
 
-.overlay .project-modal .title-link-demo:hover, .overlay .project-modal .title-link-demo:focus {
+.overlay .project-modal .details .title-link-demo:hover, .overlay .project-modal .details .title-link-demo:focus {
   cursor: pointer;
   background-color: rgba(44, 130, 201, 0.25);
   -webkit-transition: 0.15s ease-in;
   transition: 0.15s ease-in;
 }
 
-.overlay .project-modal .title-link-demo:active {
+.overlay .project-modal .details .title-link-demo:active {
   background-color: rgba(44, 130, 201, 0.5);
 }
 
-.overlay .project-modal .title-link-github {
+.overlay .project-modal .details .title-link-github {
   color: #8c14fc;
   background-color: rgba(140, 20, 252, 0.1);
 }
 
-.overlay .project-modal .title-link-github:hover, .overlay .project-modal .title-link-github:focus {
+.overlay .project-modal .details .title-link-github:hover, .overlay .project-modal .details .title-link-github:focus {
   cursor: pointer;
   background-color: rgba(140, 20, 252, 0.25);
   -webkit-transition: 0.15s ease-in;
   transition: 0.15s ease-in;
 }
 
-.overlay .project-modal .title-link-github:active {
+.overlay .project-modal .details .title-link-github:active {
   background-color: rgba(140, 20, 252, 0.5);
 }
 
-.overlay .project-modal .tech-stack {
+.overlay .project-modal .details .tech-stack {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -635,7 +669,7 @@ header .menu-button:active {
   margin-top: 10px;
 }
 
-.overlay .project-modal .tech-stack p {
+.overlay .project-modal .details .tech-stack p {
   display: inline-block;
   padding: 5px;
   margin: 5px 5px 0px 0px;
@@ -734,6 +768,29 @@ header .menu-button:active {
   }
 }
 
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .overlay .project-modal {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -webkit-column-gap: 25px;
+            column-gap: 25px;
+    width: 85vw;
+    height: 85vh;
+  }
+  .overlay .project-modal img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 0px;
+  }
+  .overlay .project-modal .details .tech-stack {
+    margin-top: auto;
+  }
+}
+
 @-webkit-keyframes modal-fade-in {
   0% {
     -webkit-transform: scale(0);
@@ -820,30 +877,5 @@ header .menu-button:active {
   100% {
     background-color: rgba(0, 0, 0, 0);
   }
-}
-
-#home {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: home;
-  background-color: #364f6b;
-}
-
-/* #about {
-	grid-area: about;
-	background-color: white;
-} */
-#portfolio {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: portfolio;
-  background-color: rgba(54, 79, 107, 0.8);
-}
-
-#contact {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: contact;
-  background-color: rgba(54, 79, 107, 0.6);
 }
 /*# sourceMappingURL=style.css.map */

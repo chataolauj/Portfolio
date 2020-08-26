@@ -127,6 +127,7 @@ header {
 
 .section-layout {
 	display: grid;
+	height: auto;
 	grid-template-rows: 7vh 86vh 7vh;
 	grid-template-areas:
 		"."
@@ -208,8 +209,8 @@ header {
 			height: 100%;
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			column-gap: 5%;
-			row-gap: 5%;
+			column-gap: 25px;
+			row-gap: 15px;
 			align-items: center;
 		}
 
@@ -347,6 +348,26 @@ header {
 	}
 }
 
+#home {
+	grid-area: "home";
+	background-color: $primary_one;
+}
+
+/* #about {
+	grid-area: about;
+	background-color: white;
+} */
+
+#portfolio {
+	grid-area: portfolio;
+	background-color: rgba(54, 79, 107, 0.8);
+}
+
+#contact {
+	grid-area: contact;
+	background-color: rgba(54, 79, 107, 0.6);
+}
+
 .overlay {
 	display: flex;
 	flex-direction: column;
@@ -420,74 +441,79 @@ header {
 
 		img {
 			max-width: 100%;
-			margin-bottom: 25px;
+			margin-bottom: 15px;
 		}
 
-		.title {
+		.details {
 			display: flex;
-			flex-direction: row;
-			align-items: center;
-			margin-bottom: 10px;
+			flex-direction: column;
 
-			h2 {
-				display: inline-block;
-			}
+			.title {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				margin-bottom: 10px;
 
-			&-link {
-				margin-left: 5px;
-				padding: 8px;
-				font-size: 1em;
-				border: none;
-				border-radius: 25px;
-				outline: none;
-
-				&-demo {
-					color: rgba(44, 130, 201, 1);
-					background-color: rgba(44, 130, 201, 0.1);
-
-					&:hover,
-					&:focus {
-						cursor: pointer;
-						background-color: rgba(44, 130, 201, 0.25);
-						transition: 0.15s ease-in;
-					}
-
-					&:active {
-						background-color: rgba(44, 130, 201, 0.5);
-					}
+				h2 {
+					display: inline-block;
 				}
 
-				&-github {
-					color: rgba(140, 20, 252, 1);
-					background-color: rgba(140, 20, 252, 0.1);
+				&-link {
+					margin-left: 5px;
+					padding: 8px;
+					font-size: 1em;
+					border: none;
+					border-radius: 25px;
+					outline: none;
 
-					&:hover,
-					&:focus {
-						cursor: pointer;
-						background-color: rgba(140, 20, 252, 0.25);
-						transition: 0.15s ease-in;
+					&-demo {
+						color: rgba(44, 130, 201, 1);
+						background-color: rgba(44, 130, 201, 0.1);
+
+						&:hover,
+						&:focus {
+							cursor: pointer;
+							background-color: rgba(44, 130, 201, 0.25);
+							transition: 0.15s ease-in;
+						}
+
+						&:active {
+							background-color: rgba(44, 130, 201, 0.5);
+						}
 					}
 
-					&:active {
-						background-color: rgba(140, 20, 252, 0.5);
+					&-github {
+						color: rgba(140, 20, 252, 1);
+						background-color: rgba(140, 20, 252, 0.1);
+
+						&:hover,
+						&:focus {
+							cursor: pointer;
+							background-color: rgba(140, 20, 252, 0.25);
+							transition: 0.15s ease-in;
+						}
+
+						&:active {
+							background-color: rgba(140, 20, 252, 0.5);
+						}
 					}
 				}
 			}
-		}
 
-		.tech-stack {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			margin-top: 10px;
+			.tech-stack {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				margin-top: 10px;
 
-			p {
-				display: inline-block;
-				padding: 5px;
-				margin: 5px 5px 0px 0px;
-				color: $primary_two;
-				background-color: $primary_one;
-				border-radius: 5px;
+				p {
+					display: inline-block;
+					padding: 5px;
+					margin: 5px 5px 0px 0px;
+					color: $primary_two;
+					background-color: $primary_one;
+					border-radius: 5px;
+				}
 			}
 		}
 	}
@@ -602,6 +628,31 @@ header {
 	}
 }
 
+@media screen and (max-width: 768px) and (orientation: landscape) {
+	.overlay {
+		.project-modal {
+			display: grid;
+			grid-template-columns: auto auto;
+			column-gap: 25px;
+			width: 85vw;
+			height: 85vh;
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				margin-bottom: 0px;
+			}
+
+			.details {
+				.tech-stack {
+					margin-top: auto;
+				}
+			}
+		}
+	}
+}
+
 @keyframes modal-fade-in {
 	0% {
 		transform: scale(0);
@@ -644,24 +695,4 @@ header {
 	100% {
 		background-color: rgba(0, 0, 0, 0);
 	}
-}
-
-#home {
-	grid-area: home;
-	background-color: $primary_one;
-}
-
-/* #about {
-	grid-area: about;
-	background-color: white;
-} */
-
-#portfolio {
-	grid-area: portfolio;
-	background-color: rgba(54, 79, 107, 0.8);
-}
-
-#contact {
-	grid-area: contact;
-	background-color: rgba(54, 79, 107, 0.6);
 }

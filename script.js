@@ -12,6 +12,7 @@ async function getProjects() {
 
 function setProjectModal(overlay, project_modal, project, img) {
 	let close = document.createElement("button");
+	let details_div = document.createElement("div");
 	let title_div = document.createElement("div");
 	let title = document.createElement("h2");
 	let demo_button = document.createElement("button");
@@ -65,9 +66,13 @@ function setProjectModal(overlay, project_modal, project, img) {
 	/* Project Modal */
 	project_modal.appendChild(close);
 	project_modal.appendChild(img.cloneNode(true));
-	project_modal.appendChild(title_div);
-	project_modal.appendChild(description);
-	project_modal.appendChild(tags);
+	project_modal.appendChild(details_div);
+
+	/* Project Modal Details */
+	details_div.classList.add("details");
+	details_div.appendChild(title_div);
+	details_div.appendChild(description);
+	details_div.appendChild(tags);
 
 	/* Project Modal Title Section */
 	title_div.classList.add("title");
