@@ -52,6 +52,7 @@ function setProjectModal(overlay, project_modal, project, img) {
 		link.click();
 	});
 
+	description.classList.add("description");
 	description.innerHTML = project.description;
 
 	tags.classList.add("tech-stack");

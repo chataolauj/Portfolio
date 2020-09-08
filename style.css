@@ -183,12 +183,6 @@ header .menu-button:active {
   color: #f0f0f0;
 }
 
-.content-home h1 {
-  margin-top: auto;
-  font-size: 4em;
-  text-align: center;
-}
-
 .content-home .profiles {
   margin-top: 10px;
   font-size: 3em;
@@ -246,12 +240,6 @@ header .menu-button:active {
       -ms-flex-align: center;
           align-items: center;
   padding: 0px 50px;
-}
-
-.content-portfolio h1 {
-  margin-top: 25px;
-  font-size: 2em;
-  color: #f0f0f0;
 }
 
 .content-portfolio #projects {
@@ -358,11 +346,6 @@ header .menu-button:active {
           align-items: center;
 }
 
-.content-contact h1 {
-  margin-top: 25px;
-  color: #f0f0f0;
-}
-
 .content-contact form {
   height: 100%;
   width: 35%;
@@ -457,15 +440,29 @@ header .menu-button:active {
           align-items: center;
 }
 
+.heading #home-title {
+  margin-top: auto;
+  font-size: 4em;
+  text-align: center;
+}
+
+.heading h1 {
+  margin-top: 25px;
+  font-size: 2em;
+  color: #f0f0f0;
+}
+
 .heading .header-underline {
   width: 50%;
   height: 5px;
-  margin-top: 15px;
+  margin-top: 5px;
   background-color: #f0f0f0;
 }
 
 #home {
-  grid-area: "home";
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: home;
   background-color: #364f6b;
 }
 
@@ -666,30 +663,20 @@ header .menu-button:active {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .overlay .project-modal .details .tech-stack p {
   display: inline-block;
   padding: 5px;
-  margin: 5px 5px 0px 0px;
+  margin-right: 5px;
   color: #f0f0f0;
   background-color: #364f6b;
   border-radius: 5px;
 }
 
-/* X-Large Screens */
-@media screen and (min-width: 1665px) {
-  .content-about {
-    padding: 0px 350px;
-  }
-}
-
-/* Large Screens */
+/* Medium Screens */
 @media screen and (max-width: 1025px) {
-  .content-about {
-    padding: 0px 150px;
-  }
   .content-contact form {
     width: 50%;
   }
@@ -766,6 +753,180 @@ header .menu-button:active {
   .overlay .project-modal {
     width: 90%;
   }
+  .overlay .project-modal .details .tech-stack p {
+    margin: 0px 5px 5px 0px;
+  }
+}
+
+/* 2K Screen */
+@media screen and (min-width: 2048px) {
+  header nav ul {
+    font-size: 2em;
+  }
+  .content-home .profiles {
+    font-size: 6em;
+  }
+  .content-home .fa-chevron-down {
+    font-size: 6em;
+  }
+  .content-portfolio #projects .card-hover-details h1 {
+    font-size: 4em;
+  }
+  .content-portfolio #projects .card-hover-details-button {
+    padding: 10px;
+    border: 3px solid #364f6b;
+    font-size: 2.5em;
+  }
+  .content-contact form {
+    width: 40%;
+  }
+  .content-contact form input[type="text"],
+  .content-contact form input[type="email"],
+  .content-contact form textarea {
+    padding: 20px;
+    font-size: 2em;
+  }
+  .content-contact form input[type="submit"] {
+    padding: 20px 15px;
+    font-size: 2em;
+  }
+  .heading #home-title {
+    font-size: 6em;
+  }
+  .heading h1 {
+    font-size: 3em;
+  }
+  .overlay .project-modal {
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .overlay .project-modal .close {
+    top: -25px;
+    right: -20px;
+    padding: 2px 17px;
+    font-size: 3em;
+    border-radius: 50px;
+  }
+  .overlay .project-modal .close:active {
+    top: -23px;
+    right: -22px;
+  }
+  .overlay .project-modal img {
+    margin-bottom: 20px;
+  }
+  .overlay .project-modal .details .title {
+    margin-bottom: 15px;
+  }
+  .overlay .project-modal .details .title h2 {
+    font-size: 2.5em;
+  }
+  .overlay .project-modal .details .title-link {
+    font-size: 2em;
+  }
+  .overlay .project-modal .details .description {
+    font-size: 2em;
+  }
+  .overlay .project-modal .details .tech-stack {
+    margin-top: 20px;
+    font-size: 1.75em;
+  }
+  .overlay .project-modal .details .tech-stack p {
+    padding: 7px;
+    margin-right: 10px;
+  }
+}
+
+/* 4K Screen */
+@media screen and (min-width: 3840px) {
+  header nav ul {
+    font-size: 4em;
+  }
+  .content-home .profiles {
+    font-size: 10em;
+  }
+  .content-home .fa-chevron-down {
+    font-size: 12em;
+  }
+  .content-portfolio #projects {
+    width: 100%;
+  }
+  .content-portfolio #projects .card-hover-details h1 {
+    font-size: 8em;
+  }
+  .content-portfolio #projects .card-hover-details-button {
+    padding: 10px;
+    border: 5px solid #364f6b;
+    font-size: 5em;
+  }
+  .content-contact form {
+    width: 40%;
+  }
+  .content-contact form input[type="text"],
+  .content-contact form input[type="email"],
+  .content-contact form textarea {
+    margin-bottom: 25px;
+    padding: 25px;
+    font-size: 4.5em;
+  }
+  .content-contact form input[type="submit"] {
+    padding: 25px 15px;
+    font-size: 4.5em;
+  }
+  .heading #home-title {
+    font-size: 12em;
+  }
+  .heading h1 {
+    font-size: 6em;
+  }
+  .heading .header-underline {
+    height: 10px;
+    margin-top: 15px;
+  }
+  .overlay .project-modal {
+    width: 85%;
+    padding: 40px;
+    border-radius: 20px;
+  }
+  .overlay .project-modal .close {
+    top: -45px;
+    right: -40px;
+    padding: 2px 34px;
+    font-size: 6em;
+    border-radius: 100px;
+  }
+  .overlay .project-modal .close:active {
+    top: -43px;
+    right: -42px;
+  }
+  .overlay .project-modal img {
+    margin-bottom: 40px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .overlay .project-modal .details .title {
+    margin-bottom: 30px;
+  }
+  .overlay .project-modal .details .title h2 {
+    font-size: 5em;
+  }
+  .overlay .project-modal .details .title-link {
+    font-size: 4em;
+    border-radius: 50px;
+  }
+  .overlay .project-modal .details .description {
+    font-size: 4em;
+  }
+  .overlay .project-modal .details .tech-stack {
+    margin-top: 40px;
+    font-size: 3em;
+  }
+  .overlay .project-modal .details .tech-stack p {
+    padding: 14px;
+    margin-right: 20px;
+    border-radius: 10px;
+    font-size: 1.25em;
+  }
 }
 
 @media screen and (max-width: 768px) and (orientation: landscape) {
@@ -788,6 +949,9 @@ header .menu-button:active {
   }
   .overlay .project-modal .details .tech-stack {
     margin-top: auto;
+  }
+  .overlay .project-modal .details .tech-stack p {
+    margin: 0px 5px 5px 0px;
   }
 }
 

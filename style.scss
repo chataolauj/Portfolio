@@ -148,12 +148,6 @@ header {
 		align-items: center;
 		color: $primary_two;
 
-		h1 {
-			margin-top: auto;
-			font-size: 4em;
-			text-align: center;
-		}
-
 		.profiles {
 			margin-top: 10px;
 			font-size: 3em;
@@ -198,12 +192,6 @@ header {
 		flex-direction: column;
 		align-items: center;
 		padding: 0px 50px;
-
-		h1 {
-			margin-top: 25px;
-			font-size: 2em;
-			color: $primary_two;
-		}
 
 		#projects {
 			height: 100%;
@@ -277,11 +265,6 @@ header {
 		flex-direction: column;
 		align-items: center;
 
-		h1 {
-			margin-top: 25px;
-			color: $primary_two;
-		}
-
 		form {
 			height: 100%;
 			width: 35%;
@@ -340,16 +323,28 @@ header {
 	flex-direction: column;
 	align-items: center;
 
+	#home-title {
+		margin-top: auto;
+		font-size: 4em;
+		text-align: center;
+	}
+
+	h1 {
+		margin-top: 25px;
+		font-size: 2em;
+		color: $primary_two;
+	}
+
 	.header-underline {
 		width: 50%;
 		height: 5px;
-		margin-top: 15px;
+		margin-top: 5px;
 		background-color: $primary_two;
 	}
 }
 
 #home {
-	grid-area: "home";
+	grid-area: home;
 	background-color: $primary_one;
 }
 
@@ -504,12 +499,12 @@ header {
 				display: flex;
 				flex-direction: row;
 				flex-wrap: wrap;
-				margin-top: 10px;
+				margin-top: 15px;
 
 				p {
 					display: inline-block;
 					padding: 5px;
-					margin: 5px 5px 0px 0px;
+					margin-right: 5px;
 					color: $primary_two;
 					background-color: $primary_one;
 					border-radius: 5px;
@@ -519,19 +514,8 @@ header {
 	}
 }
 
-/* X-Large Screens */
-@media screen and (min-width: 1665px) {
-	.content-about {
-		padding: 0px 350px;
-	}
-}
-
-/* Large Screens */
+/* Medium Screens */
 @media screen and (max-width: 1025px) {
-	.content-about {
-		padding: 0px 150px;
-	}
-
 	.content-contact {
 		form {
 			width: 50%;
@@ -624,6 +608,270 @@ header {
 	.overlay {
 		.project-modal {
 			width: 90%;
+
+			.details {
+				.tech-stack {
+					p {
+						margin: 0px 5px 5px 0px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 2K Screen */
+@media screen and (min-width: 2048px) {
+	header {
+		nav {
+			ul {
+				font-size: 2em;
+			}
+		}
+	}
+
+	.content {
+		&-home {
+			.profiles {
+				font-size: 6em;
+			}
+
+			.fa-chevron-down {
+				font-size: 6em;
+			}
+		}
+
+		&-portfolio {
+			#projects {
+				.card {
+					&-hover-details {
+						h1 {
+							font-size: 4em;
+						}
+
+						&-button {
+							padding: 10px;
+							border: 3px solid #364f6b;
+							font-size: 2.5em;
+						}
+					}
+				}
+			}
+		}
+
+		&-contact {
+			form {
+				width: 40%;
+
+				input[type="text"],
+				input[type="email"],
+				textarea {
+					padding: 20px;
+					font-size: 2em;
+				}
+
+				input[type="submit"] {
+					padding: 20px 15px;
+					font-size: 2em;
+				}
+			}
+		}
+	}
+
+	.heading {
+		#home-title {
+			font-size: 6em;
+		}
+
+		h1 {
+			font-size: 3em;
+		}
+	}
+
+	.overlay {
+		.project-modal {
+			width: 60%;
+			padding: 20px;
+			border-radius: 10px;
+
+			.close {
+				top: -25px;
+				right: -20px;
+				padding: 2px 17px;
+				font-size: 3em;
+				border-radius: 50px;
+
+				&:active {
+					top: -23px;
+					right: -22px;
+				}
+			}
+
+			img {
+				margin-bottom: 20px;
+			}
+
+			.details {
+				.title {
+					margin-bottom: 15px;
+
+					h2 {
+						font-size: 2.5em;
+					}
+
+					&-link {
+						font-size: 2em;
+					}
+				}
+
+				.description {
+					font-size: 2em;
+				}
+
+				.tech-stack {
+					margin-top: 20px;
+					font-size: 1.75em;
+
+					p {
+						padding: 7px;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 4K Screen */
+@media screen and (min-width: 3840px) {
+	header {
+		nav {
+			ul {
+				font-size: 4em;
+			}
+		}
+	}
+
+	.content {
+		&-home {
+			.profiles {
+				font-size: 10em;
+			}
+
+			.fa-chevron-down {
+				font-size: 12em;
+			}
+		}
+
+		&-portfolio {
+			#projects {
+				width: 100%;
+
+				.card {
+					&-hover-details {
+						h1 {
+							font-size: 8em;
+						}
+
+						&-button {
+							padding: 10px;
+							border: 5px solid #364f6b;
+							font-size: 5em;
+						}
+					}
+				}
+			}
+		}
+
+		&-contact {
+			form {
+				width: 40%;
+
+				input[type="text"],
+				input[type="email"],
+				textarea {
+					margin-bottom: 25px;
+					padding: 25px;
+					font-size: 4.5em;
+				}
+
+				input[type="submit"] {
+					padding: 25px 15px;
+					font-size: 4.5em;
+				}
+			}
+		}
+	}
+
+	.heading {
+		#home-title {
+			font-size: 12em;
+		}
+
+		h1 {
+			font-size: 6em;
+		}
+
+		.header-underline {
+			height: 10px;
+			margin-top: 15px;
+		}
+	}
+
+	.overlay {
+		.project-modal {
+			width: 85%;
+			padding: 40px;
+			border-radius: 20px;
+
+			.close {
+				top: -45px;
+				right: -40px;
+				padding: 2px 34px;
+				font-size: 6em;
+				border-radius: 100px;
+
+				&:active {
+					top: -43px;
+					right: -42px;
+				}
+			}
+
+			img {
+				margin-bottom: 40px;
+				object-fit: cover;
+			}
+
+			.details {
+				.title {
+					margin-bottom: 30px;
+
+					h2 {
+						font-size: 5em;
+					}
+
+					&-link {
+						font-size: 4em;
+						border-radius: 50px;
+					}
+				}
+
+				.description {
+					font-size: 4em;
+				}
+
+				.tech-stack {
+					margin-top: 40px;
+					font-size: 3em;
+
+					p {
+						padding: 14px;
+						margin-right: 20px;
+						border-radius: 10px;
+						font-size: 1.25em;
+					}
+				}
+			}
 		}
 	}
 }
@@ -647,6 +895,10 @@ header {
 			.details {
 				.tech-stack {
 					margin-top: auto;
+
+					p {
+						margin: 0px 5px 5px 0px;
+					}
 				}
 			}
 		}
