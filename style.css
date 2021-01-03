@@ -104,6 +104,10 @@ header .menu-button .burger {
   transition: all 0.5s ease-in-out;
 }
 
+header .menu-button .burger.change-color:before, header .menu-button .burger.change-color:after {
+  background-color: #364f6b;
+}
+
 header .menu-button .burger:before, header .menu-button .burger:after {
   content: "";
   position: absolute;
@@ -670,6 +674,7 @@ header .menu-button:active {
   display: inline-block;
   padding: 5px;
   margin-right: 5px;
+  margin-bottom: 5px;
   color: #f0f0f0;
   background-color: #364f6b;
   border-radius: 5px;
@@ -731,9 +736,6 @@ header .menu-button:active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  header .menu-button .burger.change-color:before, header .menu-button .burger.change-color:after {
-    background-color: #364f6b;
   }
   .content-home h1 {
     font-size: 3em;
@@ -929,6 +931,7 @@ header .menu-button:active {
   }
 }
 
+/* For smaller devices in landscape */
 @media screen and (max-width: 768px) and (orientation: landscape) {
   .overlay .project-modal {
     display: -ms-grid;
